@@ -82,12 +82,12 @@ class ISignature(form.Schema, IImageScaleTraversable):
         )
 
     email1 = schema.TextLine(
-           title=_(u"Email Address 1"),
+           title=_(u"Email Address"),
            constraint=validateaddress,
         )
 
     email2 = schema.TextLine(
-           title=_(u"Email Address 2"),
+           title=_(u"Enter the same email address"),
            constraint=validateaddress
         )
 

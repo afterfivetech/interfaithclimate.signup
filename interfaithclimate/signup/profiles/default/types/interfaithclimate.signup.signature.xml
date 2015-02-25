@@ -9,22 +9,20 @@
     i18n:translate="">Signature</property>
   <property name="icon_expr">string:${portal_url}/document_icon.png</property>
   <property name="factory">interfaithclimate.signup.signature</property>
-  <property name="global_allow">True</property>
+  <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>  
   <property name="allowed_content_types" />
-  <property name="allow_discussion">True</property>
+  <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
   <property name="schema">interfaithclimate.signup.content.signature.ISignature</property> 
   <property name="klass">plone.dexterity.content.Item</property>
   <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
-     <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
      <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
      <element value="plone.multilingualbehavior.interfaces.IDexterityTranslatable"/>
      <element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
      <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/>
-     <element value="plone.app.versioningbehavior.behaviors.IVersionable"/>
    </property>
 
   <!-- View information -->
