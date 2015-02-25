@@ -28,6 +28,21 @@ from quintagroup.z3cform.captcha import Captcha, CaptchaWidgetFactory
 from interfaithclimate.signup.interfaces import ICaptchaSchema
 
 import re
+from zope.schema import ValidationError
+from Products.CMFDefault.utils import checkEmailAddress
+from Products.CMFDefault.exceptions import EmailAddressInvalid
+
+
+class InvalidEmailAddress(ValidationError):
+    "Invalid email address"
+
+
+def validateaddress(value):
+    try:
+        checkEmailAddress(value)
+    except EmailAddressInvalid:
+        raise InvalidEmailAddress(value)
+    return True
 
 # Interface class; used to define content-type schema.
 
@@ -68,10 +83,12 @@ class ISignature(form.Schema, IImageScaleTraversable):
 
     email1 = schema.TextLine(
            title=_(u"Email Address 1"),
+           constraint=validateaddress,
         )
 
     email2 = schema.TextLine(
            title=_(u"Email Address 2"),
+           constraint=validateaddress
         )
 
     
@@ -82,16 +99,15 @@ class ISignature(form.Schema, IImageScaleTraversable):
     
     @invariant
     def emailAddressValidation(self):
-        pattern = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+        #pattern = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
             
         if self.email1 != self.email2:
-            raise Invalid(_("Email 1 and Email 2 addresses are not the same."))
+            raise Invalid(_("Both email addresses do not match"))
         
-        if not bool(re.match(pattern, self.email1)):
-            raise Invalid(_(u"Email 1 is not a valid email address."))
-        
-        elif not bool(re.match(pattern, self.email2  )):
-            raise Invalid(_(u"Email 2 is not a valid email address."))
+        #if not bool(re.match(pattern, self.email1)):
+        #    raise Invalid(_(u"Email 1 is not a valid email address."))
+        #elif not bool(re.match(pattern, self.email2  )):
+        #    raise Invalid(_(u"Email 2 is not a valid email address."))
     
     pass
 
