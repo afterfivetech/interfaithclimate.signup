@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<layers>
+    <layer name="interfaithclimate.signup"
+        interface="interfaithclimate.signup.interfaces.IProductSpecific" />
+</layers>
