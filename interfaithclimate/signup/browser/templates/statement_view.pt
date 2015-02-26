@@ -36,16 +36,41 @@
         </div>
     </fieldset>
 
-    <fieldset id="folder-listing">
-        <legend>Contents</legend>
-        <tal:block define="listing_macro context/folder_listing/macros/listing">
-            <metal:use_macro use-macro="listing_macro" />
-        </tal:block>
-    </fieldset>
+  
+    <tal:block tal:define="brains view/statement_results" tal:condition="brains">
+        <table width='100%'>
+    <thead>
+        <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Organization</th>
+      <th>Designation</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Email Address 1</th>
+      <th>Email Address 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr tal:repeat="brain brains">
+          <td><a tal:attributes="href python: brain.getPath()" tal:content="python: brain.getObject().last_name"></a></td>
+          <td tal:content="python: brain.getObject().first_name"></td>
+          <td tal:content="python: brain.getObject().organization"></td>
+          <td tal:content="python: brain.getObject().designation"></td>
+          <td tal:content="python: brain.getObject().city"></td>
+          <td tal:content="python: brain.getObject().country"></td>
+          <td tal:content="python: brain.getObject().email1"></td>
+          <td tal:content="python: brain.getObject().email2"></td>
+     
+        </tr>
+      </tbody>
+     </table>
+   </tal:block>
 
   </metal:content-core>
 </metal:main>
 
 </body>
 </html>
+
 
