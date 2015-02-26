@@ -18,11 +18,11 @@
   <property name="schema">interfaithclimate.signup.content.signature.ISignature</property> 
   <property name="klass">plone.dexterity.content.Item</property>
   <property name="behaviors">
-     <element value="plone.app.content.interfaces.INameFromTitle" />
+     <!--<element value="plone.app.content.interfaces.INameFromTitle" />
      <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
      <element value="plone.multilingualbehavior.interfaces.IDexterityTranslatable"/>
      <element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
-     <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/>
+     <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/> -->
    </property>
 
   <!-- View information -->
