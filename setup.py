@@ -35,6 +35,7 @@ setup(name='interfaithclimate.signup',
           'plone.multilingualbehavior',
           'plone.app.versioningbehavior',
           'quintagroup.z3cform.captcha',
+          'collective.easytemplate',
           # -*- Extra requirements: -*-
       ],
       extras_require={
