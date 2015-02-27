@@ -1,0 +1,11 @@
+<h5>STATEMENT SIGNATORIES</h5>
+<br/>
+<div tal:define="contents viewlet/contents" tal:condition="contents">
+    <tal:entry tal:repeat="content contents">
+        <span style="font-weight: bold" tal:content="python: content['name']"></span><br/>
+        <span tal:content="python: content['designation']"></span><br/>
+        <span tal:content="python: content['organization']"></span><br/>
+        <span tal:content="python: content['location']"></span><br/>
+        <br/>
+    </tal:entry>
+</div>
