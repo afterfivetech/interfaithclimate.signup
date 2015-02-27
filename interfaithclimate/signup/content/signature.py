@@ -54,12 +54,10 @@ class ISignature(form.Schema, IImageScaleTraversable):
 
     first_name = schema.TextLine(
            title=_(u"First Name"),
-           required=False,
         )
 
     last_name = schema.TextLine(
            title=_(u"Last Name"),
-           required=False,
         )
 
     organization = schema.TextLine(
@@ -140,6 +138,8 @@ def _createObject(context, event):
         if '-' in (max(test)):
             new_id = new_id +'-' +str(int(max(test).split('-')[1])+1)  
     parent.manage_renameObject(id, new_id )
+    new_title = str(context.first_name)+' '+str(context.last_name)
+    context.setTitle(new_title)
     context.reindexObject()
     return
     
