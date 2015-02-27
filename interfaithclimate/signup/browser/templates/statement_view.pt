@@ -37,8 +37,8 @@
     </fieldset>
 
   
-    <tal:block tal:define="brains view/statement_results" tal:condition="brains">
-      <div class="state-sign" tal:repeat="brain brains">
+    <!--<tal:block tal:define="brains view/statement_results" tal:condition="brains">-->
+     <!-- <div class="state-sign" tal:repeat="brain brains">
 	    <h3 class="widget_title">STATEMENT SIGNATORIES</h3>
 	    <div class="textwidget">
 		  <p>
@@ -47,7 +47,7 @@
 			<br><span tal:content="python: brain.getObject().email1"/>
 		  </p>
 	    </div>
-      </div>
+      </div>-->
     
     <!--<table width='100%'>
     <thead>
@@ -63,7 +63,7 @@
         </tr>
       </tbody>
      </table>-->
-   </tal:block>
+   <!--</tal:block>-->
 
 
 
