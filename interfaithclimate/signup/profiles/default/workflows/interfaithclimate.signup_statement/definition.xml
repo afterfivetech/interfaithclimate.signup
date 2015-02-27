@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <dc-workflow workflow_id="interfaithclimate.signup_statement" title="Interfaith Climate Statement Workflow" description="Workflow for the Statement container" state_variable="review_state" initial_state="private" manager_bypass="False">
  <permission>Access contents information</permission>
+ <permission>Add portal content</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
- <permission>Add portal content</permission>
+ <permission>Copy or Move</permission>
  <state state_id="private" title="Private">
   <exit-transition transition_id="publish"/>
   <permission-map name="Access contents information" acquired="False">
@@ -39,6 +40,10 @@
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Anonymous</permission-role>
    <permission-role>Authenticated</permission-role>
+  </permission-map>
+  <permission-map name="Copy or Move" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>Manager</permission-role>
