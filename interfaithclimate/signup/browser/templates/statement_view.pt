@@ -38,34 +38,23 @@
 
   
     <tal:block tal:define="brains view/statement_results" tal:condition="brains">
-        <table width='100%'>
+    <table width='100%'>
     <thead>
-        <tr>
-      <th>Last Name</th>
-      <th>First Name</th>
-      <th>Organization</th>
-      <th>Designation</th>
-      <th>City</th>
-      <th>Country</th>
-      <th>Email Address 1</th>
-      <th>Email Address 2</th>
-        </tr>
+      <th>STATEMENT SIGNATORIES</th>
     </thead>
     <tbody>
         <tr tal:repeat="brain brains">
-          <td><a tal:attributes="href python: brain.getPath()" tal:content="python: brain.getObject().last_name"></a></td>
-          <td tal:content="python: brain.getObject().first_name"></td>
-          <td tal:content="python: brain.getObject().organization"></td>
-          <td tal:content="python: brain.getObject().designation"></td>
-          <td tal:content="python: brain.getObject().city"></td>
-          <td tal:content="python: brain.getObject().country"></td>
-          <td tal:content="python: brain.getObject().email1"></td>
-          <td tal:content="python: brain.getObject().email2"></td>
-     
+		<table>
+		  <tr><td tal:content="python: brain.getObject().first_name +' '+ brain.getObject().last_name "></td></tr>
+		  <tr><td tal:content="python: brain.getObject().organization+' '+brain.getObject().designation+ ' ' +brain.getObject().city + ' ' +brain.getObject().country"></td></tr>
+	      	  <tr><td tal:content="python: brain.getObject().email1"></td></tr>
+		</table>
         </tr>
       </tbody>
      </table>
    </tal:block>
+
+
 
   </metal:content-core>
 </metal:main>
