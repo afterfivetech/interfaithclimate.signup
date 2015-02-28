@@ -19,7 +19,7 @@ class Index(dexterity.DisplayForm):
         context = self.context
         catalog = self.catalog
 	path = '/'.join(context.getPhysicalPath())
-	brains = catalog.searchResults(path={'query':path, 'depth':2}, portal_type='interfaithclimate.signup.signature')
+	brains = catalog.searchResults(path={'query':path, 'depth':2}, portal_type='interfaithclimate.signup.signature' , review_state='published')
 	return brains
 
 
