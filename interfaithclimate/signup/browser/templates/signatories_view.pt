@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="interfaithclimate.signup">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+    
+    Note that we're using Plone 4 macros. Replace them with Plone 3 macros
+    if needed.
+</tal:comment>
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+<!-- 
+    <tal:block repeat="widget view/widgets/values">
+        <div class="field" tal:condition="python:widget.__name__ not in ('IDublinCore.title', 'IDublinCore.description', 'title', 'description',)">
+            
+            <br />
+            <div tal:content="structure widget/render" />
+        </div>
+    </tal:block> -->
+<!-- 
+    <fieldset tal:repeat="group view/groups"
+              tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')">
+        <legend tal:content="group/label" />
+        <div class="field" tal:repeat="widget group/widgets/values">
+            <label tal:content="widget/label" />
+            <br />
+            <div tal:content="structure widget/render" />
+        </div>
+    </fieldset> -->
+
+  
+    <tal:block tal:define="brains view/statement_results" tal:condition="brains">
+    <!--   <div class="state-sign" tal:repeat="brain brains">
+      <h3 class="widget_title">STATEMENT SIGNATORIES</h3>
+      <div class="textwidget">
+      <p>
+      <strong tal:content="python: brain.getObject().first_name +' '+ brain.getObject().last_name "/>
+      <br><span tal:content="python: brain.getObject().organization+' '+brain.getObject().designation+ ' ' +brain.getObject().city + ' ' +brain.getObject().country"/>
+      <br><span tal:content="python: brain.getObject().email1"/>
+      </p>
+      </div>
+      </div> -->
+    
+    <table width='100%'>
+    <thead>
+      <th>STATEMENT SIGNATORIES</th>
+    </thead>
+    <tbody>
+      <tr tal:repeat="brain brains">
+      <td tal:condition="python:brain['city']">
+        <tal:element tal:condition="python: brain['first_name']" tal:content="python: brain['last_name']+' '"/>
+        <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+' '"/>
+        <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+' '"/>
+        <tal:element tal:condition="python: brain['designation']" tal:content="python: brain['designation']+' '"/>
+        <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city']+' '"/>
+        <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']+' '"/>
+      </td>
+
+      <td tal:condition="python: not brain['city']">
+        <tal:element tal:condition="python: brain['first_name']" tal:content="python: brain['last_name']+' '"/>
+        <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+' '"/>
+        <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+' '"/>
+        <tal:element tal:condition="python: brain['designation']" tal:content="python: brain['designation']+' '"/>
+        <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city']+' '"/>
+        <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']+' '"/>
+      </td>
+      </tr>
+      </tbody>
+     </table>
+   </tal:block>
+
+
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+
+
