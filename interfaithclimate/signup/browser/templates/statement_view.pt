@@ -42,27 +42,18 @@
 	    <h3 class="widget_title">STATEMENT SIGNATORIES</h3>
 	    <div class="textwidget">
 		  <p>
-			<strong tal:content="python: brain.getObject().first_name +' '+ brain.getObject().last_name "/>
-			<br><span tal:content="python: brain.getObject().organization+' '+brain.getObject().designation+ ' ' +brain.getObject().city + ' ' +brain.getObject().country"/>
-			<br><span tal:content="python: brain.getObject().email1"/>
+			<strong tal:content="python: brain['first_name'] +' '+ brain['last_name'] "/>
+			<br>
+        <span> 
+          <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+' '"/>
+          <tal:element tal:condition="python: brain['designation']" tal:content="python: brain['designation']+' '"/>
+          <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city']+' '"/>
+          <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']+' '"/>
+        <span/>
+			<br><span tal:content="python: brain['email1']"/>
 		  </p>
 	    </div>
       </div>
-    
-    <!--<table width='100%'>
-    <thead>
-      <th>STATEMENT SIGNATORIES</th>
-    </thead>
-    <tbody>
-        <tr tal:repeat="brain brains">
-		<table>
-		  <tr><td tal:content="python: brain.getObject().first_name +' '+ brain.getObject().last_name "></td></tr>
-		  <tr><td tal:content="python: brain.getObject().organization+' '+brain.getObject().designation+ ' ' +brain.getObject().city + ' ' +brain.getObject().country"></td></tr>
-	      	  <tr><td tal:content="python: brain.getObject().email1"></td></tr>
-		</table>
-        </tr>
-      </tbody>
-     </table>-->
    </tal:block>
 
 
