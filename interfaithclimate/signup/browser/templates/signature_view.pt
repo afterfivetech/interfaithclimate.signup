@@ -21,7 +21,7 @@
 
 
      <tal:block tal:define="brains view/signature_results" tal:condition="brains">
-    <table width='25%'>
+    <table width='50%'>
     <thead>
     
     </thead>
@@ -49,10 +49,6 @@
       <tr >
         <td> Country</td>
         <td tal:content="python: brain.getObject().country"></td>
-      </tr>
-      <tr > 
-        <td> Email Address</td>
-        <td tal:content="python: brain.getObject().email1"></td>
       </tr>
        
       </tbody>
