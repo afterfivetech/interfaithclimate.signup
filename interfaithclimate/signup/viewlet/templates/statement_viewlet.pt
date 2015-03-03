@@ -1,0 +1,15 @@
+<h5>STATEMENT SIGNATORIES</h5>
+<br/>
+<div tal:define="contents viewlet/contents" tal:condition="contents">
+    <tal:entry tal:repeat="content python: contents[0]">
+        <span style="font-weight: bold" tal:content="python: content['name']"></span><br/>
+        <span tal:content="python: content['designation']"></span><br/>
+        <span tal:content="python: content['organization']"></span><br/>
+        <span tal:content="python: content['location']"></span><br/>
+        <br/>
+    </tal:entry>
+
+    <tal:element tal:condition="python: len(contents[0]) >= 15">
+	<a tal:attributes="href python: contents[1]+'/signatories_view'">View All</a>
+    </tal:element>
+</div>
