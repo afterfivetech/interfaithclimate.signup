@@ -50,7 +50,7 @@
           <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city']+' '"/>
           <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']+' '"/>
         <span/>
-			<br><span tal:content="python: brain['email1']"/>
+		<!-- 	<br><span tal:content="python: brain['email1']"/> -->
 		  </p>
 	    </div>
       </div>
