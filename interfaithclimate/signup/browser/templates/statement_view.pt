@@ -37,8 +37,8 @@
     </fieldset>
 
   
-    <tal:block tal:define="brains view/statement_results" tal:condition="brains">
-      <div class="state-sign" tal:repeat="brain brains">
+    <!--<tal:block tal:define="brains view/statement_results" tal:condition="brains">-->
+     <!-- <div class="state-sign" tal:repeat="brain brains">
 	    <h3 class="widget_title">STATEMENT SIGNATORIES</h3>
 	    <div class="textwidget">
 		  <p>
@@ -53,8 +53,28 @@
 			<br><span tal:content="python: brain['email1']"/>
 		  </p>
 	    </div>
+<<<<<<< HEAD
       </div>
    </tal:block>
+=======
+      </div>-->
+    
+    <!--<table width='100%'>
+    <thead>
+      <th>STATEMENT SIGNATORIES</th>
+    </thead>
+    <tbody>
+        <tr tal:repeat="brain brains">
+		<table>
+		  <tr><td tal:content="python: brain.getObject().first_name +' '+ brain.getObject().last_name "></td></tr>
+		  <tr><td tal:content="python: brain.getObject().organization+' '+brain.getObject().designation+ ' ' +brain.getObject().city + ' ' +brain.getObject().country"></td></tr>
+	      	  <tr><td tal:content="python: brain.getObject().email1"></td></tr>
+		</table>
+        </tr>
+      </tbody>
+     </table>-->
+   <!--</tal:block>-->
+>>>>>>> upstream/master
 
 
 

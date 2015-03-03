@@ -16,8 +16,12 @@ class statement_viewlet(grok.Viewlet):
             return getToolByName(self.context, 'portal_catalog')
         
         def contents(self):
+<<<<<<< HEAD
             brains = self.catalog.unrestrictedSearchResults(path={'query':'/'.join(self.context.getPhysicalPath()), 'depth':1})[:15]
 	    brains2 = self.catalog.unrestrictedSearchResults(path={'query':'/'.join(self.context.getPhysicalPath()), 'depth':0})
+=======
+            brains = self.catalog.unrestrictedSearchResults(path={'query':'/'.join(self.context.getPhysicalPath()), 'depth':1}, review_state='published',portal_type='interfaithclimate.signup.signature')
+>>>>>>> upstream/master
             results = []
 	    path = ''
             for brain in brains:
