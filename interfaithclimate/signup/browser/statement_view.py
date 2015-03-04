@@ -33,8 +33,6 @@ class Index(dexterity.DisplayForm):
                                     'email1':obj.email1})
         return results
 
-	brains = catalog.searchResults(path={'query':path, 'depth':2}, portal_type='interfaithclimate.signup.signature' , review_state='published')
-	return brains
 
 
 

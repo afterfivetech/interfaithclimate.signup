@@ -36,7 +36,7 @@
         </div>
     </fieldset>
 
-  
+<!--   
 <tal:block tal:define="brains view/statement_results" tal:condition="brains">
   <h3 class="widget_title">STATEMENT SIGNATORIES</h3>
    <div class="state-sign" tal:repeat="brain brains">
@@ -51,13 +51,13 @@
           <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city']+' '"/>
           <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']+' '"/>
         <span/>
-		<!-- 	<br><span tal:content="python: brain['email1']"/> -->
+	
 		  </p>
 	    </div>
 
       </div>
    </tal:block>
-
+ -->
     
     
     <!--<table width='100%'>
