@@ -74,12 +74,12 @@
       </tbody>
      </table>-->
    <!--</tal:block>-->
-      <h3 class="widget_title">Would you like to add your signature to the statement?</h3>
+      <h3 class="sc_headline">Would you like to add your signature to the statement?</h3>
       
       In addition to the leaders who signed the statement at the Interfaith Summit in New York (side column), we are now giving the possibility to others to add their support. For your name to be added below,
-      please <a href='mailto:climate@wcc-coe.org'>send us an email</a> mentioning your name, organization and country.
+      please <a tal:attributes="href string:${context/absolute_url}/++add++interfaithclimate.signup.signature">fill up this form</a> place your name, organization and country.
 
-      <h3 class="widget_title">Supporters:</h3>
+      <h3 class="sc_headline">Supporters:</h3>
       <tal:block tal:define="brains view/statement_results" tal:condition="brains">
             <tal:if tal:condition="python: len(brains) <=15">
                   <p tal:repeat="brain brains" tal:content="brain"></p>
