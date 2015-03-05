@@ -1,4 +1,4 @@
-<div class="state-sign">
+<!--<div class="state-sign">
     <h3 class="widget_title">STATEMENT SIGNATORIES</h3>
     <div class="textwidget" tal:define="contents viewlet/contents" tal:condition="contents">
         <tal:entry tal:repeat="content python: contents[0]">
@@ -13,4 +13,4 @@
             <a tal:attributes="href python: contents[1]+'/signatories_view'">View All</a>
         </tal:element>
     </div>
-</div>
+</div>-->
