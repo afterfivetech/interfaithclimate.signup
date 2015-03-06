@@ -39,7 +39,7 @@
    <action type="collective.easytemplate.actions.Mail">
     <property name="source"/>
     <property
-       name="message">This is to confirm that you have signed the statement “Climate, Faith and Hope: Faith traditions together for a common future”.  You may view your signature
+       name="message">This is to confirm that you have signed the statement "Climate, Faith and Hope: Faith traditions together for a common future".  You may view your signature
  details from the link below:
      
      {{ context.absolute_url() }}
