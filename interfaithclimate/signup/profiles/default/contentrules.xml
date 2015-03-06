@@ -34,18 +34,21 @@
      Interfaith Climate Portal</property>
     <property name="recipients">holdenhao@gmail.com</property>
     <property
-       name="subject">New Signatory: {{ context.first_name }} {{ context.last_name }}</property>
+       name="subject">Signature Received</property>
    </action>
    <action type="collective.easytemplate.actions.Mail">
     <property name="source"/>
     <property
-       name="message">This is to confirm that you have signed the Interfaith Climate statement.  You may view your signature details from the link below:
+       name="message">This is to confirm that you have signed the statement “Climate, Faith and Hope: Faith traditions together for a common future”.  You may view your signature
+ details from the link below:
      
      {{ context.absolute_url() }}
      
-     We will review your submission and once approved, your name will appear in the list of official signatories.
+     We will review your submission and once approved, your name will appear in the list of supporters.
      
-     If you find that there are errors in your submission, please email holdenhao@gmail.com
+     If you find that there are errors to your submission, please email climate@wcc-coe.org
+
+     If you would like us to keep you up-to-date with the latest information, please sign up for our newsletter at www.interfaithclimate.org
      
      
      -------------------------
