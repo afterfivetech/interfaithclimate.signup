@@ -33,6 +33,7 @@ from Products.CMFDefault.utils import checkEmailAddress
 from Products.CMFDefault.exceptions import EmailAddressInvalid
 from zope.app.container.interfaces import IObjectAddedEvent
 from Products.CMFCore.utils import getToolByName
+from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
 
 class InvalidEmailAddress(ValidationError):
     "Invalid email address"
@@ -113,6 +114,10 @@ class ISignature(form.Schema, IImageScaleTraversable):
     pass
 
 alsoProvides(ISignature, IFormFieldProvider)
+
+@form.default_value(field = IExcludeFromNavigation['exclude_from_nav'])
+def excludeFromNavDefaultValue(data):
+    return data.request.URL.endswith('++add++interfaithclimate.signup.signature')
 
 class SignatureForm(z3c.form.form.Form):
     fields = z3c.form.field.Fields(ISignature)
