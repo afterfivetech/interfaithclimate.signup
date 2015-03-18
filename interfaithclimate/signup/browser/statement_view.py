@@ -26,7 +26,7 @@ class Index(dexterity.DisplayForm):
             obj = brain1._unrestrictedGetObject()
 	    value = ''
 	    if obj.first_name and obj.last_name:
-		value += str(obj.first_name)+' '+str(obj.last_name)
+		value += '%s %s' % (obj.first_name,obj.last_name)
 	    if obj.designation:
 		value += ', '+str(obj.designation)
 	    if obj.organization:
