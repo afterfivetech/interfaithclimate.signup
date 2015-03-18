@@ -24,26 +24,26 @@ class Index(dexterity.DisplayForm):
         results = []
 	for brain1 in brains:
             obj = brain1._unrestrictedGetObject()
-	    value = ''
-	    if obj.first_name and obj.last_name:
-		value += '%s %s' % (obj.first_name,obj.last_name)
-	    if obj.designation:
-		value += ', '+str(obj.designation)
-	    if obj.organization:
-		value += ', '+str(obj.organization)
-	    if obj.city:
-		value += ', '+str(obj.city)
-	    if obj.country:
-		value += ', '+str(obj.country)
-	    if value:
-		results.append(value)
-            #results.append({'first_name': obj.first_name,
-            #                        'last_name': obj.last_name,
-            #                        'organization': obj.organization,
-            #                        'designation': obj.designation,
-            #                        'city':obj.city,
-            #                        'country': obj.country,
-            #                        'email1':obj.email1})
+	 #    value = ''
+	 #    if obj.first_name and obj.last_name:
+		# value += '%s %s' % (obj.first_name,obj.last_name)
+	 #    if obj.designation:
+		# value += ', '+str(obj.designation)
+	 #    if obj.organization:
+		# value += ', '+str(obj.organization)
+	 #    if obj.city:
+		# value += ', '+str(obj.city)
+	 #    if obj.country:
+		# value += ', '+str(obj.country)
+	 #    if value:
+		# results.append(value)
+            results.append({'first_name': obj.first_name,
+                               'last_name': obj.last_name,
+                               'organization': obj.organization,
+                               'designation': obj.designation,
+                               'city':obj.city,
+                               'country': obj.country,
+                               'email1':obj.email1})
         return results
 
 
