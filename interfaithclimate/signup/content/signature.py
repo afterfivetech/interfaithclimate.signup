@@ -34,6 +34,7 @@ from Products.CMFDefault.exceptions import EmailAddressInvalid
 from zope.app.container.interfaces import IObjectAddedEvent
 from Products.CMFCore.utils import getToolByName
 from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
+from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 
 from plone.i18n.normalizer import idnormalizer
 
@@ -155,3 +156,29 @@ def _createObject(context, event):
     context.reindexObject()
     return
 
+@grok.subscribe(ISignature, IObjectModifiedEvent)
+def modifyobject(context, event):
+    parent = context.aq_parent
+    id = context.getId()
+    object_Ids = []
+    catalog = getToolByName(context, 'portal_catalog')
+    brains = catalog.unrestrictedSearchResults(object_provides = ISignature.__identifier__)
+    for brain in brains:
+        object_Ids.append(brain.id)
+    
+    last_name = idnormalizer.normalize(context.last_name)
+    first_name = idnormalizer.normalize(context.first_name)
+    new_id = last_name+'_'+first_name
+    test = ''
+    if new_id in object_Ids:
+        test = filter(lambda name: new_id in name, object_Ids)
+        
+        if '-' not in (max(test)):
+            new_id = new_id + '-1'
+        if '-' in (max(test)):
+            new_id = new_id +'-' +str(int(max(test).split('-')[1])+1)  
+    parent.manage_renameObject(id, new_id )
+    new_title = last_name+' '+first_name
+    context.setTitle(new_title)
+    context.reindexObject()
+    return
