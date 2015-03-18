@@ -57,7 +57,7 @@
       <tr tal:repeat="brain brains">
       <td>
         <tal:element tal:condition="python: brain['first_name']" tal:content="python: brain['first_name']+' '"/>
-        <tal:element tal:condition="python: brain['first_name']" tal:content="python: brain['last_name']+', '"/>
+        <tal:element tal:condition="python: brain['last_name']" tal:content="python: brain['last_name']+', '"/>
         <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+', '"/>
         <tal:element tal:condition="python: brain['designation']" tal:content="python: brain['designation']+', '"/>
         <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city']+', '"/>
