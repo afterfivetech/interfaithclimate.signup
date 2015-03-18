@@ -85,10 +85,26 @@
 		  <h2>Supporters:</h2>
 		  <tal:block tal:define="brains view/statement_results" tal:condition="brains">
 			<tal:if tal:condition="python: len(brains) <=15">
-			      <p tal:repeat="brain brains" tal:content="brain"></p>
+			      <!-- <p tal:repeat="brain brains" tal:content="brain"></p> -->
+          <p tal:repeat="brain brains">
+            <tal:element tal:condition="python: brain['first_name']" tal:content="python: brain['first_name']"></tal:element>
+            <tal:element tal:condition="python: brain['last_name']" tal:content="python: brain['last_name']+ ', '"></tal:element>
+            <tal:element tal:condition="python: brain['designation']" tal:content="python: brain['designation']+ ', '"></tal:element>
+            <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+ ', '"></tal:element>
+            <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city'] + ', '"></tal:element>
+            <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']"></tal:element>
+          </p>
 			</tal:if>
 			<tal:else tal:define="contents python: brains[:15]" tal:condition="python:len(brains) > 15">
-			      <p tal:repeat="brain contents" tal:content="brain"></p>
+			      <!-- <p tal:repeat="brain contents" tal:content="brain"></p> -->
+          <p tal:repeat="brain contents">
+            <tal:element tal:condition="python: brain['first_name']" tal:content="python: brain['first_name']"></tal:element>
+            <tal:element tal:condition="python: brain['last_name']" tal:content="python: brain['last_name']+ ', '"></tal:element>
+            <tal:element tal:condition="python: brain['designation']" tal:content="python: brain['designation']+ ', '"></tal:element>
+            <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+ ', '"></tal:element>
+            <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city'] + ', '"></tal:element>
+            <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']"></tal:element>
+          </p>
 			      <a tal:attributes="href string: ${context/absolute_url}/signatories_view" tal:content="string:More ..."></a>
 			</tal:else>
 		  </tal:block>
