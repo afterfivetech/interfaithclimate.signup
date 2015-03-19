@@ -153,6 +153,11 @@ def _createObject(context, event):
     parent.manage_renameObject(id, new_id )
     new_title = last_name+' '+first_name
     context.setTitle(new_title)
+
+    #exclude from navigation code
+    behavior = IExcludeFromNavigation(context)
+    behavior.exclude_from_nav = True
+
     context.reindexObject()
     return
 
