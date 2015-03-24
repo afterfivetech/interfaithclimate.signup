@@ -91,7 +91,7 @@
             <tal:element tal:condition="python: brain['last_name']" tal:content="python: brain['last_name']+ ', '"></tal:element>
             <tal:element tal:condition="python: brain['designation']" tal:content="python: brain['designation']+ ', '"></tal:element>
             <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+ ', '"></tal:element>
-            <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city'] + ', '"></tal:element>
+           <!--  <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city'] + ', '"></tal:element> -->
             <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']"></tal:element>
           </p>
 			</tal:if>
@@ -102,7 +102,7 @@
             <tal:element tal:condition="python: brain['last_name']" tal:content="python: brain['last_name']+ ', '"></tal:element>
             <tal:element tal:condition="python: brain['designation']" tal:content="python: brain['designation']+ ', '"></tal:element>
             <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+ ', '"></tal:element>
-            <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city'] + ', '"></tal:element>
+          <!--   <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city'] + ', '"></tal:element> -->
             <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']"></tal:element>
           </p>
 			      <a tal:attributes="href string: ${context/absolute_url}/signatories_view" tal:content="string:More ..."></a>

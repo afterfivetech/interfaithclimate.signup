@@ -73,7 +73,7 @@ class ISignature(form.Schema, IImageScaleTraversable):
         )
 
     designation = schema.TextLine(
-           title=_(u"Designation"),
+           title=_(u"Function"),
            required=False,
         )
 

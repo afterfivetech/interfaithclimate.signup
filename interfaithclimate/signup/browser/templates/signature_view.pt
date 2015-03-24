@@ -39,7 +39,7 @@
         <td tal:content="python: brain.getObject().organization"></td>
       </tr>
       <tr > 
-        <td> Designation</td>
+        <td> Function</td>
         <td tal:content="python: brain.getObject().designation"></td>
       </tr>
      <!--  <tr >
