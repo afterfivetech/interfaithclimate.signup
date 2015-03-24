@@ -77,10 +77,10 @@ class ISignature(form.Schema, IImageScaleTraversable):
            required=False,
         )
 
-    city = schema.TextLine(
-           title=_(u"City"),
-           required=False,
-        )
+    # city = schema.TextLine(
+    #        title=_(u"City"),
+    #        required=False,
+    #     )
 
     country = schema.TextLine(
            title=_(u"Country"),

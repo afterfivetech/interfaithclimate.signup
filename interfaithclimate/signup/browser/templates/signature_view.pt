@@ -42,10 +42,10 @@
         <td> Designation</td>
         <td tal:content="python: brain.getObject().designation"></td>
       </tr>
-      <tr >
+     <!--  <tr >
         <td> City</td>
         <td tal:content="python: brain.getObject().city"></td>
-      </tr>
+      </tr> -->
       <tr >
         <td> Country</td>
         <td tal:content="python: brain.getObject().country"></td>

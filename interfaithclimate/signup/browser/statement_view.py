@@ -41,7 +41,7 @@ class Index(dexterity.DisplayForm):
                                'last_name': obj.last_name,
                                'organization': obj.organization,
                                'designation': obj.designation,
-                               'city':obj.city,
+                               # 'city':obj.city,
                                'country': obj.country,
                                'email1':obj.email1})
         return results
