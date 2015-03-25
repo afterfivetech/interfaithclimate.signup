@@ -28,13 +28,13 @@ class Index(dexterity.DisplayForm):
 	    if obj.first_name and obj.last_name:
 		value += '%s %s' % (obj.first_name,obj.last_name)
 	    if obj.designation:
-		value += ', '+str(obj.designation)
+		value += ', '+obj.designation
 	    if obj.organization:
-		value += ', '+str(obj.organization)
+		value += ', '+obj.organization
 	 #    if obj.city:
 		# value += ', '+str(obj.city)
 	    if obj.country:
-		value += ', '+str(obj.country)
+		value += ', '+obj.country
 	    if value:
 		results.append(value)
             # results.append({'first_name': obj.first_name,
