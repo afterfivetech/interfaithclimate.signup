@@ -25,7 +25,7 @@ class statement_viewlet(grok.Viewlet):
                 results.append({'name':str(obj.first_name)+' '+str(obj.last_name),
                                 'designation':obj.designation,
                                 'organization':obj.organization,
-                                'location':str(obj.city)+', '+str(obj.country)})
+                                'location':str(obj.country)})
 	    for brain in brains2:
 		path = brain.getPath()
 		

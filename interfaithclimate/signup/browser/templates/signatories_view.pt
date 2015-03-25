@@ -60,7 +60,7 @@
         <tal:element tal:condition="python: brain['last_name']" tal:content="python: brain['last_name']+', '"/>
         <tal:element tal:condition="python: brain['organization']" tal:content="python: brain['organization']+', '"/>
         <tal:element tal:condition="python: brain['designation']" tal:content="python: brain['designation']+', '"/>
-        <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city']+', '"/>
+       <!--  <tal:element tal:condition="python: brain['city']" tal:content="python: brain['city']+', '"/> -->
         <tal:element tal:condition="python: brain['country']" tal:content="python: brain['country']"/>
       </td>
 
