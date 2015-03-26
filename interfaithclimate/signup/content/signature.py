@@ -139,8 +139,10 @@ def _createObject(context, event):
     for brain in brains:
         object_Ids.append(brain.id)
     
-    last_name = idnormalizer.normalize(context.last_name)
-    first_name = idnormalizer.normalize(context.first_name)
+    # last_name = str(idnormalizer.normalize(context.last_name))
+    # first_name = str(idnormalizer.normalize(context.first_name))
+    last_name = str(context.last_name)
+    first_name = str(context.first_name)
     temp_new_id = last_name+'_'+first_name
     new_id = temp_new_id.replace("-","")
     test = ''
