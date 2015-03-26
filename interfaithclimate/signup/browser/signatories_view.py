@@ -31,22 +31,23 @@ class signatories_view(dexterity.DisplayForm):
  #                                    'country': obj.country,
  #                                    'email1':obj.email1})
 
-        results = []
-	for brain1 in brains:
-            obj = brain1._unrestrictedGetObject()
-	    value = ''
-	    if obj.first_name and obj.last_name:
-		value += '%s %s' % (obj.first_name,obj.last_name)
-	    if obj.designation:
-		value += ', '+obj.designation
-	    if obj.organization:
-		value += ', '+obj.organization
-	 #    if obj.city:
-		# value += ', '+str(obj.city)
-	    if obj.country:
-		value += ', '+obj.country
-	    if value:
-		results.append(value)
 
+        results = []
+        results1 = []
+        for brain1 in brains:
+            obj = brain1._unrestrictedGetObject()
+            value = ''
+            value1 = ''
+            if obj.first_name and obj.last_name:
+                value += '%s %s' % (obj.first_name,obj.last_name)
+            if obj.designation:
+                value1 += ', '+obj.designation
+            if obj.organization:
+                value1 += ', '+obj.organization
+            if obj.country:
+                value1 += ', '+obj.country
+            if value:
+                results.append({'value':value, 'value1': value1})
+           
         return results
 

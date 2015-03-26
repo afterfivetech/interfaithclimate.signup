@@ -18,34 +18,29 @@ class Index(dexterity.DisplayForm):
     def statement_results(self):
         context = self.context
         catalog = self.catalog
-	path = '/'.join(context.getPhysicalPath())
+        path = '/'.join(context.getPhysicalPath())
 
-	brains = catalog.searchResults(path={'query':path, 'depth':2}, portal_type='interfaithclimate.signup.signature', review_state='published')
+        brains = catalog.searchResults(path={'query':path, 'depth':2}, portal_type='interfaithclimate.signup.signature', review_state='published')
         results = []
-	for brain1 in brains:
+        results1 = []
+        for brain1 in brains:
             obj = brain1._unrestrictedGetObject()
-	    value = ''
-	    if obj.first_name and obj.last_name:
-		value += '%s %s' % (obj.first_name,obj.last_name)
-	    if obj.designation:
-		value += ', '+obj.designation
-	    if obj.organization:
-		value += ', '+obj.organization
-	 #    if obj.city:
-		# value += ', '+str(obj.city)
-	    if obj.country:
-		value += ', '+obj.country
-	    if value:
-		results.append(value)
-            # results.append({'first_name': obj.first_name,
-            #                    'last_name': obj.last_name,
-            #                    'organization': obj.organization,
-            #                    'designation': obj.designation,
-            #                    # 'city':obj.city,
-            #                    'country': obj.country,
-            #                    'email1':obj.email1})
+            value = ''
+            value1 = ''
+            if obj.first_name and obj.last_name:
+                value += '%s %s' % (obj.first_name,obj.last_name)
+            if obj.designation:
+                value1 += ', '+obj.designation
+            if obj.organization:
+                value1 += ', '+obj.organization
+     #    if obj.city:
+        # value += ', '+str(obj.city)
+            if obj.country:
+                value1 += ', '+obj.country
+            if value:
+                results.append({'value':value, 'value1': value1})
+           
         return results
-
 
 
 
