@@ -86,7 +86,8 @@
 		  <tal:block tal:define="brains view/statement_results" tal:condition="brains">
 
         <p tal:repeat="brain brains">
-          <tal:element tal:content="brain"></tal:element>
+          <b><tal:element tal:content="python: brain['value']"></tal:element></b>
+          <tal:element tal:content="python: brain['value1']"></tal:element>
         </p>
         
 			<tal:if tal:define="contents python: brains[:15]" tal:condition="python:len(brains) > 15">
