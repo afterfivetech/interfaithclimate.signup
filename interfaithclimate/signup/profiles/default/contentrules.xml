@@ -32,15 +32,14 @@
      
      -------------------------
      Interfaith Climate Portal</property>
-    <property name="recipients">holdenhao@gmail.com</property>
+    <property name="recipients">climate@wcc-coe.org</property>
     <property
        name="subject">Signature Received</property>
    </action>
    <action type="collective.easytemplate.actions.Mail">
     <property name="source"/>
     <property
-       name="message">This is to confirm that you have signed the statement "Climate, Faith and Hope: Faith traditions together for a common future".  You may view your signature
- details from the link below:
+       name="message">This is to confirm that you have signed the statement "Climate, Faith and Hope: Faith traditions together for a common future".  You may view your signature details from the link below:
      
      {{ context.absolute_url() }}
      
