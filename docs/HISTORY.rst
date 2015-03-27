@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.42 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
 1.41 (2015-03-27)
 -----------------
 - fix history file
