@@ -1,8 +1,8 @@
 Changelog
 =========
 
-'1.41' (unreleased)
----------------------
+1.41 (2015-03-27)
+-----------------
 - fix history file
 - fix versioning
 - change default recipient email address in content rule
